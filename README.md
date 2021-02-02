@@ -44,4 +44,4 @@ Electron application that allows you to quickly download poster for your anime. 
 - App uses web scraping to download posters. It means that it uses internal chrome in background to literraly simulate visiting AniDB by you and takes data from visited site.
  <br><br>
  
-## Download app here: 
+### Download app here: https://github.com/piotrkraszewski/AniDB-Poster-Downloader/releases
