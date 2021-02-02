@@ -5,8 +5,7 @@
 Electron application that allows you to quickly download poster for your anime. Developed mainly for people running media servers (Plex, Emby) or other software, that displays anime collection stored on hard drive using posters. Many of those programs support identifying a show and downloading a poster for it, but in case of an anime, results are not perfect. Program supports drag and drop functionality that allows user to quickly drop a folder with anime to it and download poster to this folder.
 
 ## Basic usage:
-1. You can search anime poster by typing in "Search Anime" textarea and then clicking search or pressing "enter" key. <br>
-Then you can choose folder to which you want to downlad poster.
+1. You can search anime poster by typing in "Search Anime" textarea and then clicking search or pressing "enter" key. Then you can choose folder to which you want to downlad poster.
 
 <img src="https://lh3.googleusercontent.com/-ueiy9MskZt8pbqgSMNIK97lg6QIC9Be5jvK_l94ZgijJT0AcTllF6-6tBHXmsINhGb0RR6OJVQ5wqAo3-xWR3MxmsHLetmQsyvPp7vWwau8roa-WGftgCmemhgC4KGKEHDcwMRDCg27digVV1mYWMxWHiFPHdmWMEb_GOBRO_uPvXIyATJ9W3Ki26fiqFoMQufW-9Di_Q6BzdSY2a9EJeNlfc6UTOPpyv5G0iyo0nYHsbl-3s7VBc2rkzog4yilx1xcwuw2q3g0Uua8RDtXzLPNxGdcvQhjc9CYCo7duZqEcqHOA4JRuyzjDOQQW71NQDt3sVQCaFQX05hcbNy6ci6K9PHnS_4SRtIeSiSOvrEP7yGyZVbyFv5ZmCX6tUgrGFGD4weLrevGEgCZqjqDiUJeFvQXbHW532AiWMOjj7hRRk06Gy9hzPBX6npWpACqe8ZVZL6qGteHo6geISenGj0gxeL1gXE67lKca_oiJe3Wu_CRuzuOTqDMCBACnVCnbsp8hEu7ARurrg7RwE30o5q97cweh3nyUxerMxoZBWId1Yeb9bP4lN26fVmGNLEaRfAAYI3Tzwbt9hfzFYUwxITjgfm_2_tIm8wxkykhS-tfMpIHatFldvmY0TYTfwXG0F7DWJtz5ch4Xko8jnjuj3aBbxhnoVkF72-A7F4074CuTBfA3PQZ1nKgi8BUPwk=w861-h480-no?authuser=0" width="650"/>
 <br>
