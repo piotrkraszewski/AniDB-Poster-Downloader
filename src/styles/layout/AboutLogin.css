@@ -1,0 +1,19 @@
+.AboutLogin{
+  width: 90%;
+  min-width: 400px;
+  max-width: 800px;
+  background-color: rgb(32, 32, 32);
+  z-index: 2200;
+  text-align: center;
+}
+
+.AboutLogin-animation{
+  position: absolute;
+  z-index: 2000;
+}
+
+.btn-CloseAboutLogin{
+  width: 200px;
+  margin: 5px;
+  margin-top: 10px;
+}

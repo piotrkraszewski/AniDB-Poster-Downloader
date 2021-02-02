@@ -1,0 +1,24 @@
+.ClearCacheConfirmModal{
+  width: 90%;
+  min-width: 400px;
+  max-width: 500px;
+  background-color: rgb(32, 32, 32);
+  z-index: 2200;
+  text-align: center;
+}
+
+.confirmation-buttons{
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-confirmation{
+  width: 150px;
+  margin: 5px;
+  margin-top: 20px;
+}
+
+.ClearCacheConfirmModal-animation{
+  position: absolute;
+  z-index: 3000;
+}

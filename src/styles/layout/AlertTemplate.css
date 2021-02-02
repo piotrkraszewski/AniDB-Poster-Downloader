@@ -1,0 +1,35 @@
+.AlertTemplate {
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  padding-left: 13px;
+  z-index: 100;
+  font-size: large;
+}
+
+.info{
+  background-color: #6d6130;
+  border: 1px solid #a58f2b;
+}
+
+.error{
+  background-color: #6d3030;
+  border: 1px solid #a52b2b;
+}
+
+.success{
+  background-color: #28743a;
+  border: 1px solid #27b147;
+}
+
+
+.AlertTemplate p{
+  padding-top: 5px;
+  padding-right: 10px;
+  text-shadow: 1px 1px 3px  #000000;
+}
+
+.AlertTemplate-btn{
+  border-radius: 50%;
+  height: 35px;
+}

@@ -1,0 +1,447 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+@import './layout/AlertTemplate.css';
+@import './layout/LoginModal.css';
+@import './layout/AboutLogin.css';
+@import './layout/ClearCacheConfirmModal.css';
+@import './layout/FirstTimeLoginModal.css';
+@import './layout/FirstTimeAutoLoginModal.css';
+
+:root{
+  --greenBtn: #299442;
+  --greenBtnHover: #1c662d;
+  --greenBtnHover2: #12411b;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: rgb(250, 250, 250);
+  margin: auto;
+  padding: 2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0;
+}
+/* == common use classes== */
+.line{
+  width: 100%;
+  margin: 10px 0px;
+  background-color: rgb(94, 94, 94);
+  height: 1px;
+}
+
+.btn-exit{
+  margin-left: auto;
+  border: 2px solid rgb(60, 60, 60);
+  background: rgb(46, 46, 46);
+  text-align: center;
+  padding: 7px;
+  line-height: 12px;
+}
+/* == END common use classes== */
+
+p{
+  margin-bottom: 3px;
+  user-select: none;
+}
+
+h5 {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  user-select: none;
+}
+
+.top-app{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+.app-title {
+  position: absolute;
+}
+
+.login-btn{
+  display: flex;
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.login-icon{
+  max-height: 25px;
+  max-width: 25px;
+  filter: invert(27%);
+  align-items: center;
+}
+
+.logged{
+  background-color: var(--greenBtnHover);
+}
+
+.logged:focus,
+.logged:hover{
+  background-color:var(--greenBtnHover2);
+}
+
+/* Animate login tooltip */
+.login-btn::before,
+.login-btn::after{
+  --scale: 0;
+  --tooltip-color: rgb(20, 20, 20);
+  
+  position: absolute;
+  transform: translateX(-27%) translateY(90%) scale(var(--scale));
+  transition: 180ms 200ms transform;
+  transform-origin: top center;
+}
+
+.login-btn::before{
+  content: attr(data-tooltip);
+  color: white;
+  padding: 0.5rem;
+  width: max-content;
+  border-radius: 30px;
+  background: var(--tooltip-color);
+}
+
+.login-btn:hover:before,
+.login-btn:hover::after{
+  --scale: 1;
+}
+/* END Animate login tooltip */
+
+.refresh-btn{
+  margin-right: 5px;
+  padding: 6px;
+  border-radius: 30px;
+}
+
+/* Animate refresh tooltip */
+.refresh-btn::before,
+.refresh-btn::after{
+  --scale: 0;
+  --tooltip-color: rgb(20, 20, 20);
+  
+  position: absolute;
+  transform: translateX(-33%) translateY(90%) scale(var(--scale));
+  transition: 180ms 200ms transform;
+  transform-origin: top center;
+}
+
+.refresh-btn::before{
+  content: attr(data-tooltip);
+  color: white;
+  padding: 0.5rem;
+  width: max-content;
+  border-radius: 30px;
+  background: var(--tooltip-color);
+}
+
+.refresh-btn:hover:before,
+.refresh-btn:hover::after{
+  --scale: 1;
+}
+/* END Animate refresh tooltip */
+
+.refresh-icon{
+  max-height: 23px;
+  max-width: 23px;
+  filter: invert(60%);
+  align-items: center;
+}
+
+textarea{
+  background-color: rgb(54, 54, 54) !important;
+  color: rgb(250, 250, 250) !important;
+}
+
+#container {
+  display: flex;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+}
+
+#left-side{
+  width: 50%;
+  padding: 20px;
+  padding-top: 0px;
+  padding-left: 10%;
+}
+
+#right-site{
+  /* margin-top: 20px; */
+  width: 50%;
+  text-align: left;
+}
+
+.file-drop-target {
+  margin: auto;
+  background-color: rgb(54, 54, 54);
+  max-width: 400px; 
+  height: 160px; 
+  margin-bottom: 10px;
+  border: 2px solid rgb(51, 76, 121);
+  border-radius: 25px;
+
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+
+  user-select: none;
+}
+
+#text-drag-file{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: large;
+  color: rgb(150, 150, 150);
+}
+
+.textarea-button-container{
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#search-name{
+  margin: auto;
+  height: 60px; 
+  width: 80%;
+}
+
+.my-text-area{
+  width: 100%;
+  max-width: 400px;
+  margin: auto ;
+}
+
+.button-image{
+  max-height: 30px;
+  max-width: 30px;
+  filter: invert(27%);
+  align-items: center;
+}
+
+.small-right-btn{
+  width: 20%;
+  height: 58px;
+  /* max-width: 50px; */
+  padding: 5px;
+  /* font-size: 13px; */
+  /* line-height: 23px; */
+  background-color: #2e2e2e;
+}
+
+
+/* Image button animation */
+.small-right-btn::before,
+.small-right-btn::after{
+  --scale: 0;
+  --tooltip-color: rgba(20, 20, 20);
+  
+  position: absolute;
+  transform: translateX(-42%) translateY(-150%) scale(var(--scale));
+  transition: 180ms 500ms transform;
+  transform-origin: bottom center;
+  z-index: 1000;
+}
+
+.small-right-btn::before{
+  content: attr(data-tooltip);
+  color: white;
+  padding: 0.5rem;
+  width: max-content;
+  border-radius: 30px;
+  background: var(--tooltip-color);
+}
+
+.small-right-btn:hover:before,
+.small-right-btn:hover::after{
+  --scale: 1;
+}
+/* END Image button animation */
+
+
+
+#btn-search{
+  width: 100%;
+  max-width: 400px; 
+  margin: auto;
+}
+
+#btn-download{
+  width: 100%;
+  max-width: 400px; 
+  background-color: var(--greenBtn);
+}
+
+#btn-download:hover{
+  background-color: var(--greenBtnHover);
+}
+
+.btn:focus{
+  box-shadow: none!important;
+  outline: 0;
+  animation: btnClicked 0.5s;
+}
+
+#big-img{
+  max-width: 270px;
+}
+
+#big-img:hover + .message{
+  display:flex !important;
+  justify-content: center;
+  z-index:10;
+}
+
+.message{
+  display:none;
+  color: white;
+  background:rgb(41, 41, 41);
+  position:absolute;
+  width: 272px;
+  margin-top: -26px;
+  border-radius: 20px;
+  border: 2px solid rgb(31, 31, 31);
+  box-shadow: 0 0px 15px rgba(39, 39, 39, 0.4);
+  text-align: center;
+}
+
+.search-res{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.one-res{
+  text-align: center;
+}
+
+.small-img{
+  width: 130px;
+  height: 185px; 
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+  background-color: rgb(48, 48, 48); 
+  transition:  0.4s; 
+}
+
+.hide{
+  visibility: hidden;
+  width: 0px;
+  height: 0px; 
+}
+
+.small-img:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 0.4s; 
+}
+
+.small-img:active{
+  transform: scale(1.03);
+  transition: transform 0.1s;
+}
+
+.small-text{
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+
+
+@media only screen and (max-width: 720px) {
+  #left-side{
+    padding-left: 0%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .my-text-area{
+    width: 70%;
+  }
+  .small-right-btn{
+    width: 30%;
+  }
+}
+
+/* ====== Animation =========*/
+
+@keyframes btnClicked {
+  0% {transform: scale(1);}
+  50% {transform: scale(0.98);}
+  100% {transform: scale(1);}
+}
+
+/* Loader */
+.lds-ellipsis {
+  position: relative ;
+  bottom: -150px;
+  left: 98px; 
+  opacity: 100%;
+  z-index: 100;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgb(240, 240, 240);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
