@@ -45,3 +45,23 @@ Electron application that allows you to quickly download poster for your anime. 
  <br><br>
  
 ### Download app here: https://github.com/piotrkraszewski/AniDB-Poster-Downloader/releases
+
+<br>
+
+# How to develop the app
+
+To run app in developer mode use:
+
+`yarn start`
+
+To create exe file for the app use command below. It will create exe files for your app and installer in relsease folder inside project files:
+
+`yarn package`
+
+To add dependency package use this syntax:
+
+`yarn add "package name"` 
+
+<br>
+
+This project don't use `npm` so don't try any command with it because it will brake it. Unless of course you want to switch to `npm`.
