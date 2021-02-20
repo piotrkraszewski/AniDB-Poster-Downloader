@@ -12,6 +12,7 @@ import AboutLogin from './modals/AboutLogin'
 import ConfirmModal from './modals/ClearCacheConfirmModal'
 import FirstTimeLoginModal from './modals/FirstTimeLoginModal'
 import FirstTimeAutoLoginModal from './modals/FirstTimeAutoLoginModal'
+import AppScrollbar from '../utilities/AppScrollbar'
 import no_image from '../images/no_image.png'
 import chrome_image from '../images/chrome.png'
 import folder_image from '../images/folder.png'
@@ -261,179 +262,182 @@ export default function posterDownloader() {
   
   //=====================================
   return (
-  <div>
-    <div className='top-app'>
-      <button 
-        className='btn btn-dark refresh-btn'
-        data-tooltip='Refresh'
-        onClick={refresh}  
-      >
-        <img src={refresh_icon} className='refresh-icon'/>
-      </button>
-      <button 
-        className={'btn btn-dark login-btn ' + (islogged ? 'logged' : '')}
-        data-tooltip='Login'
-        onClick={openLogin}  
-      >
-        <img src={login_icon} className='login-icon'/>
-      </button>
-    </div> 
-
-    <div id="container">
-      <div id="left-side">
-
-        <FileDrop onDrop={(files, e) => onDrop(files, e)}>
-          <p id="text-drag-file">Drag File/Folder Here or Search manually bellow</p>
-        </FileDrop>
-
-        <h5>Search Anime</h5>
-        <div className="textarea-button-container">
-          <textarea 
-            className="form-control my-text-area"
-            spellcheck="false" 
-            value={search} 
-            onChange={changeSearch}
-            onKeyPress={enterPressed}>
-          </textarea>
-          <button 
-            className="btn btn-dark small-right-btn"
-            data-tooltip="Search manually in chrome"
-            onClick={onSearchInBrowser}
-          > 
-            <img className='button-image' src={chrome_image} />
-          </button>
-        </div>
-        <div className="text-center">
-          <button 
-            id="btn-search" 
-            className="btn btn-primary"
-            onClick={onClickSearch}
-            >
-              Search
-          </button>
-        </div>
-
-        <h5>Download path</h5>
-        <div className="text-center">
-        <div className="textarea-button-container">
-          <textarea
-            className="form-control my-text-area" 
-            spellcheck="false"
-            value={download} 
-            onChange={changeDownload}>
-          </textarea>
-          <button 
-            className="btn btn-dark small-right-btn"
-            data-tooltip="Select path in expolorer"
-            onClick={selectPathInExplorer}
-            > 
-            <img className='button-image' src={folder_image} />
-          </button>
-        </div>
-          <button id="btn-download" className="btn btn-success" onClick={onDownload}>Download</button>
-        </div>
-      </div>
-
-      <div id="right-site">
-        <div 
-        className={isLoading && "lds-ellipsis"}
-          style={{opacity: (isLoading ? '0.8' : '0')}}
+  <AppScrollbar>
+    <div className='app'>
+      <div className='top-app'>
+        <button 
+          className='btn btn-dark refresh-btn'
+          data-tooltip='Refresh'
+          onClick={refresh}  
         >
-        <div></div><div></div><div></div><div></div></div>
+          <img src={refresh_icon} className='refresh-icon'/>
+        </button>
+        <button 
+          className={'btn btn-dark login-btn ' + (islogged ? 'logged' : '')}
+          data-tooltip='Login'
+          onClick={openLogin}  
+        >
+          <img src={login_icon} className='login-icon'/>
+        </button>
+      </div> 
 
-        <div id='big-img' onClick={bigImgClick}>
-          <CrossfadeImage
-            style={{
-              height: '380px', 
-              minWidth: '270px',
-              width: '270px',
-              borderRadius: '10px',
-              boxShadow: '2px 2px 15px rgba(0, 0, 0, 0.6)',
-              backgroundColor: 'rgb(48, 48, 48)',
-              marginBottom: '3px',
-              cursor: (selectedAnime.posterUrl !== no_image && 'pointer'),
-              opacity: (isLoading ? '0.4' : '1')
-            }}
-            src={selectedAnime.posterUrl}
-          />
+      <div id="container">
+        <div id="left-side">
+
+          <FileDrop onDrop={(files, e) => onDrop(files, e)}>
+            <p id="text-drag-file">Drag File/Folder Here or Search manually bellow</p>
+          </FileDrop>
+
+          <h5>Search Anime</h5>
+          <div className="textarea-button-container">
+            <textarea 
+              className="form-control my-text-area"
+              spellCheck="false" 
+              value={search} 
+              onChange={changeSearch}
+              onKeyPress={enterPressed}>
+            </textarea>
+            <button 
+              className="btn btn-dark small-right-btn"
+              data-tooltip="Search manually in chrome"
+              onClick={onSearchInBrowser}
+            > 
+              <img className='button-image' src={chrome_image} />
+            </button>
+          </div>
+          <div className="text-center">
+            <button 
+              id="btn-search" 
+              className="btn btn-primary"
+              onClick={onClickSearch}
+              >
+                Search
+            </button>
+          </div>
+
+          <h5>Download path</h5>
+          <div className="text-center">
+          <div className="textarea-button-container">
+            <textarea
+              className="form-control my-text-area" 
+              spellCheck="false"
+              value={download} 
+              onChange={changeDownload}>
+            </textarea>
+            <button 
+              className="btn btn-dark small-right-btn"
+              data-tooltip="Select path in expolorer"
+              onClick={selectPathInExplorer}
+              > 
+              <img className='button-image' src={folder_image} />
+            </button>
+          </div>
+            <button id="btn-download" className="btn btn-success" onClick={onDownload}>Download</button>
+          </div>
         </div>
 
-        {selectedAnime.posterUrl !== no_image
-        ? <p className="message">click to open anime page in browser</p>
-        : <p></p>}
+        <div id="right-site">
+          <div 
+          className={isLoading && "lds-ellipsis"}
+            style={{opacity: (isLoading ? '0.8' : '0')}}
+          >
+          <div></div><div></div><div></div><div></div></div>
 
-        <p id="first-title"><b>First Title:</b> {selectedAnime.firstTitle}</p>
+          <div id='big-img' onClick={bigImgClick}>
+            <CrossfadeImage
+              style={{
+                height: '380px', 
+                minWidth: '270px',
+                width: '270px',
+                borderRadius: '10px',
+                boxShadow: '2px 2px 15px rgba(0, 0, 0, 0.6)',
+                backgroundColor: 'rgb(48, 48, 48)',
+                marginBottom: '3px',
+                cursor: (selectedAnime.posterUrl !== no_image && 'pointer'),
+                opacity: (isLoading ? '0.4' : '1')
+              }}
+              src={selectedAnime.posterUrl}
+            />
+          </div>
 
-        {selectedAnime.secondTitle
-        ? <p id="second-title"><b>Second Title:</b> {selectedAnime.secondTitle}</p>
-        : <div></div>}
-        
+          {selectedAnime.posterUrl !== no_image
+          ? <p className="message">click to open anime page in browser</p>
+          : <p></p>}
+
+          <p id="first-title"><b>First Title:</b> {selectedAnime.firstTitle}</p>
+
+          {selectedAnime.secondTitle
+          ? <p id="second-title"><b>Second Title:</b> {selectedAnime.secondTitle}</p>
+          : <div></div>}
+          
+        </div>
       </div>
+
+      <div className="search-res">
+        {<AnimatePresence exitBeforeEnter>
+          {animeData.map((val, i) => (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1}}
+              exit={{ opacity: 0 }}
+
+              // no_image is to hide warning 
+              key={val.posterUrl ? val.posterUrl : 'no_image'} 
+              className="one-res" 
+              onClick={() => selectPoster(i)}
+            >      
+              <img 
+                className={animeData.length > 1 ? 'small-img' : 'hide'} 
+                src={val.posterUrl}
+              /> 
+              <p className={animeData.length > 1 ? 'small-text' : 'hide'}>
+                {val.firstTitle}
+              </p>
+            </motion.div>
+          ))}
+        </AnimatePresence>}
+      </div>
+      
+
+      <LoginModal 
+        open={isLoginModalOpen} 
+        onClose={() => setIsLoginModalOpen(false)} 
+        onOpenAbout={() => setIsAboutLoginOpen(true)}
+        onOpenConfirmModal={() => setIsConfirmModalOpen(true)}
+        login={login}
+        onLoginChange={val => setLogin(val)}
+        password={password}
+        islogged={islogged}
+        onPasswordChange={val => setPassword(val)}
+        loginUser={() => loginUser(login, password)}
+      />
+
+      <AboutLogin 
+        open={isAboutLoginOpen} 
+        onClose={() => setIsAboutLoginOpen(false)} 
+      /> 
+
+      <ConfirmModal 
+        open={isConfirmModalOpen} 
+        onClose={() => setIsConfirmModalOpen(false)} 
+        clearUserData={() => clearUserData()} 
+      /> 
+      <FirstTimeLoginModal
+        open={firstTimeLoginMsg} 
+        onClose={() => {
+          setFirstTimeLoginMsg(false)
+          setIsFirstTimeLogin(true)
+        }} 
+        proceedToLoginUser={() => proceedToLoginUser()}
+      />
+      <FirstTimeAutoLoginModal
+        open={firstTimeAutoLoginMsg} 
+        onClose={() => {
+          setFirstTimeAutoLoginMsg(false)
+          setIsFirstTimeAutoLogin(true)
+        }} 
+        proceedToLoginUser={() => proceedToAutoLoginUser()}
+      />
     </div>
-
-    <div className="search-res">
-      {<AnimatePresence exitBeforeEnter>
-        {animeData.map((val, i) => (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1}}
-            exit={{ opacity: 0 }}
-
-            // no_image is to hide warning 
-            key={val.posterUrl ? val.posterUrl : 'no_image'} 
-            className="one-res" 
-            onClick={() => selectPoster(i)}
-          >      
-            <img 
-              className={animeData.length > 1 ? 'small-img' : 'hide'} 
-              src={val.posterUrl}
-            /> 
-            <p className={animeData.length > 1 ? 'small-text' : 'hide'}>
-              {val.firstTitle}
-            </p>
-          </motion.div>
-        ))}
-      </AnimatePresence>}
-    </div>
-
-    <LoginModal 
-      open={isLoginModalOpen} 
-      onClose={() => setIsLoginModalOpen(false)} 
-      onOpenAbout={() => setIsAboutLoginOpen(true)}
-      onOpenConfirmModal={() => setIsConfirmModalOpen(true)}
-      login={login}
-      onLoginChange={val => setLogin(val)}
-      password={password}
-      islogged={islogged}
-      onPasswordChange={val => setPassword(val)}
-      loginUser={() => loginUser(login, password)}
-    />
-
-    <AboutLogin 
-      open={isAboutLoginOpen} 
-      onClose={() => setIsAboutLoginOpen(false)} 
-    /> 
-
-    <ConfirmModal 
-      open={isConfirmModalOpen} 
-      onClose={() => setIsConfirmModalOpen(false)} 
-      clearUserData={() => clearUserData()} 
-    /> 
-    <FirstTimeLoginModal
-      open={firstTimeLoginMsg} 
-      onClose={() => {
-        setFirstTimeLoginMsg(false)
-        setIsFirstTimeLogin(true)
-      }} 
-      proceedToLoginUser={() => proceedToLoginUser()}
-    />
-    <FirstTimeAutoLoginModal
-      open={firstTimeAutoLoginMsg} 
-      onClose={() => {
-        setFirstTimeAutoLoginMsg(false)
-        setIsFirstTimeAutoLogin(true)
-      }} 
-      proceedToLoginUser={() => proceedToAutoLoginUser()}
-    />
-  </div>
+  </AppScrollbar>
   )}

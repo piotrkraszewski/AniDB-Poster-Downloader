@@ -10,6 +10,7 @@
 @import './layout/ClearCacheConfirmModal.css';
 @import './layout/FirstTimeLoginModal.css';
 @import './layout/FirstTimeAutoLoginModal.css';
+@import './layout/ScroolbarStyle.css';
 
 :root{
   --greenBtn: #299442;
@@ -20,8 +21,12 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: rgb(250, 250, 250);
+ 
+}
+
+.app{
   margin: auto;
-  padding: 2rem;
+  padding: 1rem;
   padding-top: 0.2rem;
   padding-bottom: 0;
 }

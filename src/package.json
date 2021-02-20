@@ -1,7 +1,7 @@
 {
   "name": "anidb-poster-downloader",
   "productName": "AniDB Poster Downloader",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "description": "Electron application that allows to quickly download poster for your anime",
   "main": "./main.prod.js",
   "author": {
